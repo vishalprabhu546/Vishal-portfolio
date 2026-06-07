@@ -43,13 +43,13 @@ export default function ExperienceEducation() {
       ],
     },
     {
-      degree: "Pre-University Education (Science Stream – PCMB)",
+      degree: "Pre-University Education (Science Stream – PCME)",
       institution: "Canara Pre-University College",
       location: "Mangaluru, Karnataka",
       period: "2021 – 2023",
-      details: "Class 12: 87.3%",
+      details: "Class 12: 87.33%",
       points: [
-        "Specialized in Physics, Chemistry, Mathematics, and Biology (PCMB).",
+        "Specialized in Physics, Chemistry, Mathematics, and Electronics (PCME).",
         "Acquired strong analytical, mathematical, and foundational science skills."
       ],
     },
