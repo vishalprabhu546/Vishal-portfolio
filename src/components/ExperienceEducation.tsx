@@ -32,15 +32,36 @@ export default function ExperienceEducation() {
 
   const educations = [
     {
-      degree: "BE – Electronics & Communication Engineering",
+      degree: "Bachelor of Engineering (Electronics & Communication Engineering)",
       institution: "Canara Engineering College",
-      university: "Visvesvaraya Technological University (VTU)",
       location: "Bantwal, Karnataka",
-      period: "Aug 2023 – Aug 2027 (Expected)",
+      period: "2023 – 2027",
       details: "CGPA: 8.0 / 10.0",
       points: [
         "Core focus on Analog & Digital Circuits, Microcontrollers (ESP32/Arduino), VLSI & RTL design (Verilog), PCB layout, and semiconductor theory.",
         "Hands-on lab work in troubleshooting and schematic design using LTspice and NI Multisim."
+      ],
+    },
+    {
+      degree: "Pre-University Education (Science Stream – PCMB)",
+      institution: "Canara Pre-University College",
+      location: "Mangaluru, Karnataka",
+      period: "2021 – 2023",
+      details: "Class 12: 87.3%",
+      points: [
+        "Specialized in Physics, Chemistry, Mathematics, and Biology (PCMB).",
+        "Acquired strong analytical, mathematical, and foundational science skills."
+      ],
+    },
+    {
+      degree: "Schooling (Class 1 – Class 10)",
+      institution: "Ganapathy English Medium School",
+      location: "Mangaluru, Karnataka",
+      period: "Completed 2021",
+      details: "Class 10: 87.36%",
+      points: [
+        "Completed general secondary education with strong fundamentals in mathematics and science.",
+        "Passed Karnataka SSLC board examinations in 2021 with distinction."
       ],
     },
   ];
