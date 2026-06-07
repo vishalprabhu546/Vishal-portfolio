@@ -544,7 +544,7 @@ export default function Hero() {
                 <Mail className="w-5 h-5" />
               </a>
               <a
-                href="https://github.com/gvishalvprabhu"
+                href="https://github.com/vishalprabhu546"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 md:w-11 md:h-11 rounded-xl border border-accent-purple/20 bg-accent-purple/5 flex items-center justify-center hover:bg-accent-purple hover:border-accent-purple text-text-purple hover:text-white transition-all duration-300 hover:shadow-[0_0_15px_rgba(124,58,237,0.4)] hover:-translate-y-1"
