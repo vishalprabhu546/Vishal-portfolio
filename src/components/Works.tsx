@@ -123,10 +123,10 @@ export default function Works() {
             Showcase
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white">
-            My Recent Works
+            Featured Projects
           </h2>
           <p className="text-slate-400 mt-4 text-sm md:text-base">
-            Exploring hardware engineering through core PCB circuits, microcontroller firmware, and VLSI RTL design.
+            Featured projects from a portfolio of 20+ engineering projects. Exploring hardware engineering through core PCB circuits, microcontroller firmware, and VLSI RTL design.
           </p>
         </div>
 
@@ -225,6 +225,19 @@ export default function Works() {
             })}
           </AnimatePresence>
         </motion.div>
+
+        {/* Explore All Projects CTA */}
+        <div className="flex justify-center mt-12">
+          <a
+            href="https://sites.google.com/view/vishalprabhuprojects/projects"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="glow-btn flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-accent-purple text-white border border-accent-purple/40 font-bold text-sm shadow-lg shadow-accent-purple/30 group transition-all duration-300 hover:shadow-[0_0_20px_rgba(124,58,237,0.5)]"
+          >
+            Explore All Projects
+            <ArrowUpRight className="w-4.5 h-4.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </a>
+        </div>
       </div>
     </section>
   );

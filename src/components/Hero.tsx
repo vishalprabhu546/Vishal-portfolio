@@ -400,7 +400,7 @@ export default function Hero() {
   const stats = [
     { value: 8.0, decimals: 1, suffix: "/10", label: "CGPA", icon: GraduationCap },
     { value: 2, decimals: 0, suffix: "+", label: "Internships", icon: Briefcase },
-    { value: 4, decimals: 0, suffix: "+", label: "Key Projects", icon: Cpu },
+    { value: 20, decimals: 0, suffix: "+", label: "Projects", icon: Cpu },
     { value: 6, decimals: 0, suffix: "+", label: "Certifications", icon: ShieldCheck },
   ];
 
