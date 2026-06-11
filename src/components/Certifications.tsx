@@ -39,7 +39,7 @@ export default function Certifications() {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden bg-[#070314]/30">
+    <section id="certifications" className="py-24 relative overflow-hidden bg-[#070314]/30">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Header */}

@@ -125,7 +125,7 @@ export default function ExperienceEducation() {
           </div>
 
           {/* Column 2: Education */}
-          <div className="space-y-12">
+          <div id="education" className="space-y-12">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-2xl bg-accent-indigo/20 border border-accent-indigo/35 flex items-center justify-center text-indigo-400 shadow-lg">
                 <GraduationCap className="w-6 h-6" />

@@ -238,8 +238,8 @@ export default function Hero() {
           x: cx + r * Math.cos(angle),
           y: cy + r * Math.sin(angle)
         };
-        const baseLen = isMobile ? 80 : 150;
-        const varLen = isMobile ? 90 : 180;
+        const baseLen = isMobile ? 120 : 150;
+        const varLen = isMobile ? 130 : 180;
         const spikeLen = Math.random() * varLen + baseLen; // Scaled down by ~50% on mobile
         const spikeAngle = angle + (Math.random() - 0.5) * 0.45;
         const endPt = {
@@ -314,10 +314,10 @@ export default function Hero() {
       const circleCount = activeStrikes.filter(s => s.width === 1.5).length;
       const dischargeCount = activeStrikes.filter(s => s.width === 2.2).length;
 
-      const maxCircles = isMobile ? 2 : 5;
-      const maxDischarges = isMobile ? 1 : 3;
-      const circleSpawnRate = isMobile ? 0.12 : 0.22;
-      const dischargeSpawnRate = isMobile ? 0.08 : 0.16;
+      const maxCircles = isMobile ? 4 : 5;
+      const maxDischarges = isMobile ? 2 : 3;
+      const circleSpawnRate = isMobile ? 0.20 : 0.22;
+      const dischargeSpawnRate = isMobile ? 0.14 : 0.16;
 
       // Maintain active circular wrapping strikes (throttled on mobile)
       if (circleCount < maxCircles && Math.random() < circleSpawnRate) {
@@ -398,14 +398,15 @@ export default function Hero() {
   };
 
   const stats = [
-    { value: 8.0, decimals: 1, suffix: "/10", label: "CGPA", icon: GraduationCap },
-    { value: 2, decimals: 0, suffix: "+", label: "Internships", icon: Briefcase },
-    { value: 20, decimals: 0, suffix: "+", label: "Projects", icon: Cpu },
-    { value: 6, decimals: 0, suffix: "+", label: "Certifications", icon: ShieldCheck },
+    { value: 8.0, decimals: 1, suffix: "/10", label: "CGPA", icon: GraduationCap, targetId: "#education" },
+    { value: 2, decimals: 0, suffix: "+", label: "Internships", icon: Briefcase, targetId: "#experience" },
+    { value: 20, decimals: 0, suffix: "+", label: "Projects", icon: Cpu, targetId: "#works" },
+    { value: 6, decimals: 0, suffix: "+", label: "Certifications", icon: ShieldCheck, targetId: "#certifications" },
   ];
 
   return (
     <section
+      id="home"
       ref={containerRef}
       className="relative min-h-screen pt-20 pb-4 flex flex-col justify-center overflow-hidden bg-transparent animate-fade-in"
     >
@@ -725,14 +726,14 @@ export default function Hero() {
                   }
 
                   return (
-                    <g key={idx} style={{ opacity: path.opacity }}>
+                    <g key={idx} style={{ opacity: isMobile ? Math.min(1.0, path.opacity * 1.3 + 0.1) : path.opacity }}>
                       {/* --- Main Trunk --- */}
                       {/* Layer 1: Thick outer color glow */}
                       <path
                         d={path.d}
                         fill="none"
                         stroke={outerColor}
-                        strokeWidth={path.width * 3.5}
+                        strokeWidth={path.width * (isMobile ? 4.5 : 3.5)}
                         style={{ filter: "blur(5px)" }}
                       />
                       {/* Layer 2: Intense white glow envelope */}
@@ -740,7 +741,7 @@ export default function Hero() {
                         d={path.d}
                         fill="none"
                         stroke="#ffffff"
-                        strokeWidth={path.width * 2.2}
+                        strokeWidth={path.width * (isMobile ? 2.8 : 2.2)}
                         style={{ filter: "blur(2.5px)" }}
                       />
                       {/* Layer 3: Inner color glow */}
@@ -748,7 +749,7 @@ export default function Hero() {
                         d={path.d}
                         fill="none"
                         stroke={innerColor}
-                        strokeWidth={path.width * 1.5}
+                        strokeWidth={path.width * (isMobile ? 1.8 : 1.5)}
                         style={{ filter: "blur(1px)" }}
                       />
                       {/* Layer 4: Hot white core */}
@@ -756,7 +757,7 @@ export default function Hero() {
                         d={path.d}
                         fill="none"
                         stroke="#ffffff"
-                        strokeWidth={path.width * 0.7}
+                        strokeWidth={path.width * (isMobile ? 0.9 : 0.7)}
                       />
 
                       {/* --- Branches --- */}
@@ -767,7 +768,7 @@ export default function Hero() {
                             d={bd}
                             fill="none"
                             stroke={outerColor}
-                            strokeWidth={path.width * 2.2}
+                            strokeWidth={path.width * (isMobile ? 2.8 : 2.2)}
                             style={{ filter: "blur(3.5px)" }}
                           />
                           {/* Layer 2: White glow envelope */}
@@ -775,7 +776,7 @@ export default function Hero() {
                             d={bd}
                             fill="none"
                             stroke="#ffffff"
-                            strokeWidth={path.width * 1.4}
+                            strokeWidth={path.width * (isMobile ? 1.8 : 1.4)}
                             style={{ filter: "blur(1.5px)" }}
                           />
                           {/* Layer 3: Inner color glow */}
@@ -783,7 +784,7 @@ export default function Hero() {
                             d={bd}
                             fill="none"
                             stroke={innerColor}
-                            strokeWidth={path.width * 0.9}
+                            strokeWidth={path.width * (isMobile ? 1.2 : 0.9)}
                             style={{ filter: "blur(0.5px)" }}
                           />
                           {/* Layer 4: Thin hot core */}
@@ -791,7 +792,7 @@ export default function Hero() {
                             d={bd}
                             fill="none"
                             stroke="#ffffff"
-                            strokeWidth={path.width * 0.4}
+                            strokeWidth={path.width * (isMobile ? 0.6 : 0.4)}
                           />
                         </g>
                       ))}
@@ -854,8 +855,9 @@ export default function Hero() {
           {stats.map((stat, idx) => {
             const Icon = stat.icon;
             return (
-              <div
+              <a
                 key={idx}
+                href={stat.targetId}
                 className={`relative flex items-center justify-center p-4 md:p-5 flex-col sm:flex-row gap-3.5 group cursor-pointer transition-all duration-300 hover:bg-accent-purple/5
                   ${idx % 2 === 0 ? "border-r border-accent-purple/10 lg:border-r-0" : ""}
                   ${idx < 2 ? "border-b border-accent-purple/10 lg:border-b-0" : ""}
@@ -887,7 +889,7 @@ export default function Hero() {
 
                 {/* Subtly glowing border accent when hovered */}
                 <div className="absolute bottom-0 left-0 w-full h-[3px] bg-transparent group-hover:bg-gradient-to-r group-hover:from-accent-purple group-hover:to-accent-pink transition-colors duration-300" />
-              </div>
+              </a>
             );
           })}
         </motion.div>

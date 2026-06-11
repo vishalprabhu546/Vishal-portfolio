@@ -33,9 +33,10 @@ export default function Navbar() {
   }, [isOpen]);
 
   const navLinks = [
+    { name: "Home", href: "#home" },
     { name: "Expertise", href: "#expertise" },
-    { name: "Works", href: "#works" },
-    { name: "Achievements", href: "#achievements" },
+    { name: "Projects", href: "#works" },
+    { name: "Certifications", href: "#certifications" },
     { name: "Experience", href: "#experience" },
     { name: "Skills", href: "#skills" },
     { name: "Contact", href: "#contact" },
@@ -83,13 +84,13 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
-          <div className="flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-4 lg:gap-8">
+          <div className="flex items-center gap-4 lg:gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-text-purple/80 hover:text-white font-semibold text-[15px] md:text-base transition-all hover:translate-y-[-1px]"
+                className="text-text-purple/80 hover:text-white font-semibold text-[14px] lg:text-base transition-all hover:translate-y-[-1px] whitespace-nowrap"
               >
                 {link.name}
               </a>
@@ -101,7 +102,7 @@ export default function Navbar() {
             download="Resume-G_Vishal_V_Prabhu.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-5.5 py-2.5 rounded-full bg-accent-purple/25 hover:bg-accent-purple text-white border border-accent-purple/50 font-bold text-[15px] md:text-base transition-all hover:shadow-[0_0_15px_rgba(124,58,237,0.4)] group"
+            className="flex items-center gap-2 px-4 py-2 lg:px-5.5 lg:py-2.5 rounded-full bg-accent-purple/25 hover:bg-accent-purple text-white border border-accent-purple/50 font-bold text-[14px] lg:text-base transition-all hover:shadow-[0_0_15px_rgba(124,58,237,0.4)] group whitespace-nowrap"
           >
             <Download className="w-4.5 h-4.5 group-hover:animate-bounce" />
             Download Resume
