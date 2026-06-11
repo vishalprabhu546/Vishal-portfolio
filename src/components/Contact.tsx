@@ -291,11 +291,8 @@ export default function Contact() {
         </div>
         
         {/* Footer Credit line */}
-        <div className="mt-24 pt-8 border-t border-accent-purple/10 flex flex-col sm:flex-row items-center justify-between text-slate-500 text-xs font-semibold gap-4">
+        <div className="mt-24 pt-8 border-t border-accent-purple/10 flex items-center justify-center text-slate-500 text-xs font-semibold text-center">
           <span className="tracking-wide">&copy; {new Date().getFullYear()} G. Vishal V Prabhu. All Rights Reserved.</span>
-          <span className="flex items-center gap-1">
-            Engineered with <span className="text-accent-pink animate-pulse">&hearts;</span> and Next.js
-          </span>
         </div>
       </div>
     </section>
