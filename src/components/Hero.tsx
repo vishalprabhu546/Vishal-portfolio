@@ -517,7 +517,7 @@ export default function Hero() {
             className="flex flex-col lg:flex-row items-center gap-4 pt-1 w-full"
           >
             <a
-              href="/resume.pdf"
+              href="/resume-core.pdf"
               download="Resume-G_Vishal_V_Prabhu.pdf"
               target="_blank"
               rel="noopener noreferrer"

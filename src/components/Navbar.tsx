@@ -98,7 +98,7 @@ export default function Navbar() {
           </div>
           
           <a
-            href="/resume.pdf"
+            href="/resume-core.pdf"
             download="Resume-G_Vishal_V_Prabhu.pdf"
             target="_blank"
             rel="noopener noreferrer"
@@ -166,7 +166,7 @@ export default function Navbar() {
         {/* Drawer Footer with Download Button */}
         <div className="pt-6 border-t border-accent-purple/10">
           <a
-            href="/resume.pdf"
+            href="/resume-core.pdf"
             download="Resume-G_Vishal_V_Prabhu.pdf"
             target="_blank"
             rel="noopener noreferrer"
