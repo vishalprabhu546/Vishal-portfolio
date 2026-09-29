@@ -23,6 +23,24 @@ export default function Contact() {
     setErrorMessage("");
 
     try {
+      // 1. Perform email validation checks via Next.js API Route
+      const validationResponse = await fetch("/api/validate-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: form.email }),
+      });
+
+      const validationData = await validationResponse.json();
+
+      if (!validationResponse.ok || !validationData.valid) {
+        throw new Error(
+          validationData.error || "The email address could not be verified. Please enter a valid, active email."
+        );
+      }
+
+      // 2. Submit to FormSubmit only if the email is validated successfully
       const response = await fetch("https://formsubmit.co/ajax/vishalprabhu58@gmail.com", {
         method: "POST",
         headers: {
@@ -31,7 +49,7 @@ export default function Contact() {
         },
         body: JSON.stringify({
           Name: `${form.firstName} ${form.lastName}`,
-          Email: form.email,
+          Email: form.email.trim(),
           Phone: form.phone,
           Interest: form.option === "embedded" ? "Embedded Systems / Firmware" 
                     : form.option === "hardware" ? "Analog / Digital Circuit Design"
